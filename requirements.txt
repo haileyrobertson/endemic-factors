@@ -12,7 +12,9 @@ debugpy==1.8.5
 decorator==5.1.1
 executing==2.1.0
 fonttools==4.54.1
+geographiclib==2.0
 geopandas==1.0.1
+geopy==2.4.1
 idna==3.10
 ipykernel==6.29.5
 ipython==8.27.0
@@ -44,6 +46,7 @@ python-dotenv==1.0.1
 pytz==2024.2
 pyzmq==26.2.0
 requests==2.32.3
+seaborn==0.13.2
 setuptools==75.1.0
 shapely==2.0.6
 six==1.16.0
