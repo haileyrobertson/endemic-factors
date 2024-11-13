@@ -33,6 +33,7 @@ numpy==2.1.1
 packaging==24.1
 pandas==2.2.3
 parso==0.8.4
+patsy==1.0.1
 pexpect==4.9.0
 pillow==11.0.0
 platformdirs==4.3.6
@@ -56,6 +57,7 @@ setuptools==75.1.0
 shapely==2.0.6
 six==1.16.0
 stack-data==0.6.3
+statsmodels==0.14.4
 threadpoolctl==3.5.0
 tornado==6.4.1
 traitlets==5.14.3
