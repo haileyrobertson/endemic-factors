@@ -43,6 +43,11 @@ processing_targets <- tar_plan(
     cleaned_dengue,
     clean_dengue(raw_dengue, adm0, adm1),
     format = "rds"
+  ),
+  tar_target(
+    americas_df,
+    cleaned_dengue %>% dplyr::filter(region_un == "Americas"),
+    format = "rds"
   )
 )
 
