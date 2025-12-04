@@ -161,5 +161,4 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 .DS_Store
-master-repo-1.3.0/data/raw_data/masterDB_V1.3.csv
 open_dengue_v1_2.csv
