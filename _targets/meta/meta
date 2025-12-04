@@ -1,0 +1,14 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+raw_dengue|stem|426c38689ea370ba|9dc4084d308d863c|20d3b5e983de68b0|-675194466||t20426.8427574873s|s1801373b|1801373|rds|local|vector|||1.355||
+adm1|stem|8fdcffab684fa4cf|1c8b2cba1148f2e6|48c297e05c800e08|1112220679||t20426.8427798478s|s13745928b|13745928|rds|local|vector|||0.808||
+adm0|stem|0355d49c496f893f|9d3ec6f17ca4806e|48c297e05c800e08|-1234200185||t20426.8427810737s|s139781b|139781|rds|local|vector|||0.057||
+cleaned_dengue|stem|e8d7247c276cea05|a5809328dec4baa9|491a330e7a85ec03|-1108930163||t20426.8435174903s|s270227658b|270227658|rds|local|vector|||3.503||
+data_dir|object|184dc62ab72450e2
+load_adm|function|cd1b47db426ede86
+.Random.seed|object|572ae06ea2f5e2b1
+f|object|07f2ad20db168036
+clean_dengue|function|8f54f18d0a01f2de
+plot_dengue_coverage|function|a87099131931e5af
+load_dengue|function|d93fa0663cc107a6
+output_dir|object|9cdce0d5b13ebdd4
+dengue_coverage_plot|stem|301dad8d367c53b2|d99a6970094bf42f|30a6e00e5b004d42|-890484156|/Users/haileyrobertson/Documents/GitHub/endemic-factors/outputs/figures/adm1_opendengue_coverage_americas.png*/Users/haileyrobertson/Documents/GitHub/endemic-factors/outputs/figures/adm1_opendengue_coverage_global.png|t20426.8719404474s|s1343676b|1343676|file|local|vector|||5.601||
