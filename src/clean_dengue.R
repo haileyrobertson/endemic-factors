@@ -88,6 +88,8 @@ clean_dengue <- function(df_raw, adm0, adm1) {
         TRUE ~ "other"
       )
     ) %>%
+    # filter to years of interest
+    dplyr::filter(year >= 1990 & year <= 2024) %>%
     # join adm and dengue data
     left_join(adm0, by = c("adm_0_iso3" = "adm0_a3")) %>%
     left_join(adm1, by = c("adm_0_iso3" = "adm0_a3", "adm_1_name" = "name")) %>%
