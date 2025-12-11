@@ -70,6 +70,7 @@ clean_dengue <- function(df_raw, adm0, adm1) {
 
   # clean ISO3 codes and dates
   clean_df <- df_raw %>%
+    rename(adm_0_iso3 = ISO_A0) %>%
     mutate(
       adm_0_iso3 = countrycode(adm_0_name,
         origin = "country.name",
@@ -80,16 +81,16 @@ clean_dengue <- function(df_raw, adm0, adm1) {
       ),
       across(all_of(c("calendar_start_date", "calendar_end_date")), ymd),
       year = year(calendar_start_date),
-      period_length = calendar_end_date - calendar_start_date + 1,
-      temporal_coverage = case_when(
-        period_length >= 360 & period_length <= 370 ~ "annual",
-        period_length >= 27 & period_length <= 31 ~ "monthly",
-        period_length >= 4 & period_length <= 10 ~ "weekly",
-        TRUE ~ "other"
-      )
+      period_length = calendar_end_date - calendar_start_date + 1
+      # temporal_coverage = case_when(
+      #   period_length >= 360 & period_length <= 370 ~ "annual",
+      #   period_length >= 27 & period_length <= 31 ~ "monthly",
+      #   period_length >= 4 & period_length <= 10 ~ "weekly",
+      #   TRUE ~ "other"
+      # )
     ) %>%
     # filter to years of interest
-    dplyr::filter(year >= 1990 & year <= 2024) %>%
+    dplyr::filter(Year >= 1990 & Year <= 2024) %>%
     # join adm and dengue data
     left_join(adm0, by = c("adm_0_iso3" = "adm0_a3")) %>%
     left_join(adm1, by = c("adm_0_iso3" = "adm0_a3", "adm_1_name" = "name")) %>%
