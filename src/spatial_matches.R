@@ -1,24 +1,62 @@
-df_raw <- raw_dengue
-names(df_raw) <- tolower(names(df_raw))
+# import df_raw
 
-normalize <- function(x) {
-  stringi::stri_trans_general(x, "latin-ascii") |>
-    tolower() |>
-    trimws()
-}
-
-df_raw <- df_raw |>
+df_fix <- df_raw |>
   mutate(
-    adm_0_name = normalize(adm_0_name),
-    adm_1_name = normalize(adm_1_name),
-    adm_2_name = normalize(adm_2_name),
-    full_name = normalize(full_name),
-    case_definition_standardised = normalize(case_definition_standardised),
-    s_res = normalize(s_res),
-    t_res = normalize(t_res)
+    adm_2_name = case_when(
+      iso_a0 == "COL" & adm_1_name %in% c(
+        "barranquilla",
+        "cartagena",
+        "santa marta",
+        "bogota"
+      ) ~ adm_1_name,
+      iso_a0 == "NPL" & adm_1_name %in% c(
+        "bagmati",
+        "madhesh",
+        "province 1",
+        "sudurpaschim",
+        "karnali",
+        "gandaki",
+        "lumbini"
+      ) ~ adm_1_name,
+      iso_a0 == "SAU" & !is.na(adm_1_name) ~ adm_1_name,
+      iso_a0 == "THA" & adm_1_name == "bungkan" ~ adm_1_name,
+      TRUE ~ adm_2_name
+    )
   )
 
-df_raw <- df_raw |>
+df_fix <- df_fix |>
+  mutate(
+    adm_1_name = case_when(
+      iso_a0 == "COL" & adm_2_name == "barranquilla" ~ "atlantico",
+      iso_a0 == "COL" & adm_2_name == "cartagena" ~ "bolivar",
+      iso_a0 == "COL" & adm_2_name == "santa marta" ~ "magdalena",
+      iso_a0 == "COL" & adm_2_name == "bogota" ~ "bogota",
+      iso_a0 == "NPL" & adm_2_name == "bagmati" ~ "central",
+      iso_a0 == "NPL" & adm_2_name == "madhesh" ~ "central",
+      iso_a0 == "NPL" & adm_2_name == "province 1" ~ "eastern",
+      iso_a0 == "NPL" & adm_2_name == "sudurpaschim" ~ "far western",
+      iso_a0 == "NPL" & adm_2_name == "karnali" ~ "mid western",
+      iso_a0 == "NPL" & adm_2_name == "gandaki" ~ "western",
+      iso_a0 == "NPL" & adm_2_name == "lumbini" ~ "western",
+      iso_a0 == "THA" & adm_2_name == "bungkan" ~ "bung kan",
+      TRUE ~ adm_1_name
+    )
+  )
+
+gaul_recode <- readr::read_csv("data/fao_gaul/gaul_recode.csv")
+
+df_fix <- df_fix |>
+  dplyr::left_join(
+    gaul_recode |>
+      dplyr::select(adm_0_name, adm_1_name, adm_2_name, gaul_2015_code),
+    by = c("adm_0_name", "adm_1_name", "adm_2_name")
+  ) |>
+  dplyr::mutate(
+    fao_gaul_code = dplyr::coalesce(gaul_2015_code, fao_gaul_code)
+  ) |>
+  dplyr::select(-gaul_2015_code)
+
+df_fix <- df_fix |>
   mutate(
     gaul_level = case_when(
       !is.na(adm_0_name) & is.na(adm_1_name) & is.na(adm_2_name) ~ "adm0",
@@ -28,82 +66,23 @@ df_raw <- df_raw |>
     )
   )
 
+
+
 shp <- st_read("data/fao_gaul/g2015_2014_2/g2015_2014_2.shp")
 
-df_adm0 <- df_raw |>
-  dplyr::filter(gaul_level == "adm0") |>
-  dplyr::left_join(
-    shp |>
-      sf::st_drop_geometry() |>
-      dplyr::select(ADM0_CODE, ADM0_NAME) |>
-      dplyr::distinct(),
-    by = c("fao_gaul_code" = "ADM0_CODE")
-  )
+all_gaul_codes <- unique(c(
+  shp$ADM0_CODE,
+  shp$ADM1_CODE,
+  shp$ADM2_CODE
+))
 
-df_adm1 <- df_raw |>
-  dplyr::filter(gaul_level == "adm1") |>
-  dplyr::left_join(
-    shp |>
-      sf::st_drop_geometry() |>
-      dplyr::select(ADM1_CODE, ADM0_NAME, ADM1_NAME) |>
-      dplyr::distinct(),
-    by = c("fao_gaul_code" = "ADM1_CODE")
-  )
+df_fix <- df_fix |>
+  mutate(matched = fao_gaul_code %in% all_gaul_codes)
 
-df_adm2 <- df_raw |>
-  dplyr::filter(gaul_level == "adm2") |>
-  dplyr::left_join(
-    shp |>
-      sf::st_drop_geometry() |>
-      dplyr::select(ADM2_CODE, ADM0_NAME, ADM1_NAME, ADM2_NAME) |>
-      dplyr::distinct(),
-    by = c("fao_gaul_code" = "ADM2_CODE")
-  )
+unmatched <- df_fix |>
+  dplyr::filter(!matched)
 
-
-adm0_df <- shp |>
-  sf::st_drop_geometry() |>
-  dplyr::distinct(ADM0_CODE, ADM0_NAME)
-
-adm1_df <- shp |>
-  sf::st_drop_geometry() |>
-  dplyr::distinct(
-    ADM0_CODE, ADM0_NAME,
-    ADM1_CODE, ADM1_NAME
-  )
-
-adm2_df <- shp |>
-  sf::st_drop_geometry() |>
-  dplyr::distinct(
-    ADM0_CODE, ADM0_NAME,
-    ADM1_CODE, ADM1_NAME,
-    ADM2_CODE, ADM2_NAME
-  )
-
-df_raw <- dplyr::bind_rows(df_adm0, df_adm1, df_adm2)
-
-df_raw <- df_raw |>
-  dplyr::mutate(
-    matched = case_when(
-      gaul_level == "adm0" ~ !is.na(ADM0_NAME),
-      gaul_level == "adm1" ~ !is.na(ADM1_NAME),
-      gaul_level == "adm2" ~ !is.na(ADM2_NAME),
-      TRUE ~ FALSE
-    )
-  )
-
-unmatched <- df_raw |>
-  dplyr::filter(!matched) |>
-  distinct(iso_a0, adm_0_name, adm_1_name, adm_2_name, fao_gaul_code)
-
-df_raw <- df_raw |>
-  mutate(
-    adm0_name_shp = normalize(ADM0_NAME),
-    adm1_name_shp = normalize(ADM1_NAME),
-    adm2_name_shp = normalize(ADM2_NAME)
-  )
-
-# mismatches <- df_raw |>
+# mismatches <- df_fix |>
 #   dplyr::filter(
 #     !is.na(adm_1_name),
 #     !is.na(adm1_name_shp),
@@ -111,16 +90,8 @@ df_raw <- df_raw |>
 #   ) |>
 #   distinct(adm_0_name, fao_gaul_code, adm1_name_shp, adm_1_name, adm_2_name, adm2_name_shp)
 
-# gaul_recode <- unmatched |>
-#   dplyr::distinct(fao_gaul_code) |>
-#   dplyr::arrange(fao_gaul_code) |>
-#   dplyr::rename(open_dengue_code = fao_gaul_code)
 
-# readr::write_csv(
-#   gaul_recode,
-#   "gaul_recode.csv"
-# )
+# x_shp <- shp |> dplyr::filter(tolower(ADM0_NAME) == "indonesia")
+# View(x_shp)
 
-x_shp <- shp |> dplyr::filter(tolower(ADM0_NAME) == "saudi arabia")
-View(x_shp)
 ####
