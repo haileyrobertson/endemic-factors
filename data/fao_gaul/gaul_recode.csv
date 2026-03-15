@@ -1,329 +1,334 @@
-open_dengue_code
-53,147295
-215,
-624
-626
-630
-632
-633
-634
-641
-925
-1144
-1153
-2280
-2281
-2285
-2289
-4400
-4418
-4420
-4444
-4463
-4474
-4494
-4526
-4619
-4620
-4635
-13475
-13503
-13914
-14028
-22351
-22352
-22354
-22357
-22359
-22363
-22364
-25305
-25306
-25307
-25308
-25309
-25310
-25312
-25313
-25314
-25316
-25317
-26787
-40409
-40764
-1000437
-1001272
-1002010
-1002196
-1002268
-1002734
-1002819
-1003167
-1003842
-1006344
-1006345
-1006346
-1006347
-1006348
-1006349
-1006350
-1006351
-1006352
-1006353
-1006354
-1006355
-1006356
-1006357
-1006358
-1006359
-1006360
-1006361
-1006362
-1006363
-1006364
-1006365
-1006366
-1006367
-1006368
-1006369
-1006370
-1006371
-1006372
-1006373
-1006374
-1006375
-1006376
-1011440
-1011441
-1011442
-1011444
-1011446
-1011447
-1011801
-1011804
-1011806
-1011809
-1011811
-1011812
-1011816
-1011819
-1011824
-1011825
-1011826
-1011831
-1011833
-1011834
-1011835
-1011836
-1011838
-1011839
-1011843
-1011845
-1011848
-1011849
-1011850
-1011851
-1011852
-1011853
-1011862
-1011863
-1011865
-1011867
-1011869
-1011872
-1011874
-1011876
-1011879
-1011880
-1011881
-1011886
-1011887
-1011893
-1011894
-1011897
-1011898
-1011900
-1011903
-1011904
-1011905
-1011906
-1011910
-1011914
-1011917
-1011918
-1011921
-1011922
-1011925
-1011931
-1011933
-1011935
-1011936
-1011938
-1011942
-1011944
-1011945
-1011948
-1011952
-1011957
-1011958
-1011959
-1011964
-1011969
-1011970
-1011974
-1011977
-1011980
-1011981
-1011982
-1011984
-1011985
-1011988
-1011991
-1011992
-1011996
-1011997
-1011999
-1012003
-1012005
-1012006
-1012008
-1012012
-1012013
-1012015
-1012017
-1012018
-1012022
-1012023
-1012025
-1012027
-1012029
-1012030
-1012031
-1012032
-1012033
-1012034
-1012038
-1012040
-1012041
-1012045
-1012047
-1012051
-1012052
-1012053
-1012057
-1012058
-1012300
-1012301
-1012302
-1012305
-1012308
-1012309
-1012311
-1012314
-1012315
-1012316
-1012318
-1012319
-1012320
-1012322
-1012324
-1012325
-1012326
-1012329
-1012330
-1012334
-1012341
-1012342
-1012343
-1012345
-1012346
-1012348
-1012349
-1012350
-1012355
-1012357
-1012358
-1012359
-1012363
-1012365
-1012366
-1012367
-1012369
-1012370
-1012375
-1012376
-1012378
-1012380
-1012385
-1012388
-1012389
-1012393
-1012394
-1012395
-1012397
-1012400
-1012401
-1012402
-1012405
-1012406
-1012408
-1012409
-1012412
-1012414
-1012415
-1012416
-1012418
-1012419
-1012422
-1012424
-1012425
-1012427
-1012428
-1012430
-1012431
-1012432
-1012434
-1012435
-1012437
-1012438
-1012439
-1012441
-1012447
-1012452
-1012453
-1012454
-1012459
-1013663
-1013664
-1013665
-1013666
-1013667
-1013668
-1013669
-1013670
-1013671
-1013672
-1013673
-1013674
-1013675
-1013676
-1013677
-1013678
-1013679
-1013680
-1013681
-1013682
-1013683
-1013684
-1013685
-1013686
-1013687
-1013688
-1013689
-1013690
-1013691
-1013692
-1013693
-1013694
-1013695
-1013696
+adm_0_name,adm_1_name,adm_2_name,open_dengue_code,gaul_2015_code
+china,NA,NA,53,147295
+saudi arabia,northern borders,NA,215,2631
+bhutan,dagana,NA,624,41308
+bhutan,haa,NA,626,41309
+bhutan,pemagatsel,NA,630,41310
+bhutan,samdrupjongkhar,NA,632,41311
+bhutan,samtse,NA,633,41312
+bhutan,sarpang,NA,634,41313
+bhutan,zhemgang,NA,641,41314
+ecuador,guayas,NA,1144,22005
+ecuador,santa elena,NA,1144,22007
+ecuador,pichincha,NA,1153,22006
+ecuador,santo domingo de los tsachilas,NA,1153,22008
+panama,bocas del toro,NA,2280,93668
+panama,ngobe bugle,NA,2280,93672
+panama,chiriqui,NA,2281,93669
+panama,darien,NA,2285,93670
+panama,veraguas,NA,2289,93673
+argentina,buenos aires,canuelas,4400,82725
+argentina,buenos aires,esteban echeverria,4418,82726
+argentina,buenos aires,florencio varela,4420,82728
+argentina,buenos aires,la plata,4444,4490
+argentina,buenos aires,moron,4463,82734
+argentina,buenos aires,pilar,4474,82735
+argentina,buenos aires,san vicente,4494,82739
+argentina,chaco,12 de octubre,4526,82755
+argentina,entre rios,colon,4619,82758
+argentina,entre rios,concordia,4620,82759
+argentina,entre rios,villaguay,4635,82761
+sudan,NA,NA,40764,6
+solomon islands,temotu,NA,1000437,225
+solomon islands,isabel,NA,1001272,225
+solomon islands,guadalcanal,NA,1002010,225
+solomon islands,choiseul,NA,1002196,225
+solomon islands,central islands,NA,1002268,225
+solomon islands,malaita,NA,1002734,225
+solomon islands,honiara,NA,1002819,225
+solomon islands,makira,NA,1003167,225
+solomon islands,western,NA,1003842,225
+mexico,NA,NA,1006344,162
+mexico,aguascalientes,NA,1006345,2028
+mexico,baja california,NA,1006346,2029
+mexico,campeche,NA,1006347,2031
+mexico,chiapas,NA,1006348,2032
+mexico,chihuahua,NA,1006349,2033
+mexico,coahuila,NA,1006350,2034
+mexico,distrito federal,NA,1006351,2036
+mexico,guanajuato,NA,1006352,2038
+mexico,guerrero,NA,1006353,2039
+mexico,hidalgo,NA,1006354,2040
+mexico,mexico,NA,1006355,2042
+mexico,michoacan,NA,1006356,2043
+mexico,morelos,NA,1006357,2044
+mexico,nuevo leon,NA,1006358,2046
+mexico,oaxaca,NA,1006359,2047
+mexico,puebla,NA,1006360,2048
+mexico,queretaro,NA,1006361,2049
+mexico,tlaxcala,NA,1006362,2056
+mexico,zacatecas,NA,1006363,2059
+mexico,baja california sur,NA,1006364,2030
+mexico,colima,NA,1006365,2035
+mexico,durango,NA,1006366,2037
+mexico,jalisco,NA,1006367,2041
+mexico,nayarit,NA,1006368,2045
+mexico,quintana roo,NA,1006369,2050
+mexico,san luis potosi,NA,1006370,2051
+mexico,sinaloa,NA,1006371,2052
+mexico,sonora,NA,1006372,2053
+mexico,tabasco,NA,1006373,2054
+mexico,tamaulipas,NA,1006374,2055
+mexico,veracruz,NA,1006375,2057
+mexico,yucatan,NA,1006376,2058
+myanmar,NA,NA,1011440,171
+papua new guinea,NA,NA,1011441,192
+peru,NA,NA,1011442,195
+solomon islands,NA,NA,1011444,225
+afghanistan,NA,NA,1011446,1
+viet nam,NA,NA,1011447,264
+peru,la libertad,sanchez carrion,1011801,24125
+peru,piura,piura,1011804,24161
+peru,cusco,calca,1011806,24074
+peru,ancash,huaraz,1011809,24020
+peru,cusco,cusco,1011811,24078
+peru,lima,canete,1011812,24134
+peru,ayacucho,cangallo,1011816,24047
+peru,ica,ica,1011819,24104
+peru,cusco,quispicanchi,1011824,24083
+peru,san martin,huallaga,1011825,24187
+peru,ayacucho,huamanga,1011826,24049
+peru,cajamarca,jaen,1011831,24065
+peru,huanuco,huacaybamba,1011833,24094
+peru,ucayali,padre abad,1011834,24198
+peru,piura,sechura,1011835,24162
+peru,cajamarca,cajamarca,1011836,24059
+peru,ayacucho,parinacochas,1011838,24054
+peru,huanuco,leoncio prado,1011839,24098
+peru,piura,huancabamba,1011843,24158
+peru,arequipa,arequipa,1011845,24039
+peru,cajamarca,san pablo,1011848,24069
+peru,lima,lima,1011849,91841
+peru,pasco,oxapampa,1011850,24155
+peru,callao,callao,1011851,91837
+peru,san martin,lamas,1011852,24182
+peru,cajamarca,chota,1011853,24061
+peru,ica,palpa,1011862,24106
+peru,madre de dios,manu,1011863,24148
+peru,huanuco,dos de mayo,1011865,91840
+peru,la libertad,viru,1011867,24128
+peru,san martin,tocache,1011869,24188
+peru,cusco,la convencion,1011872,24080
+peru,junin,huancayo,1011874,24111
+peru,junin,junin,1011876,24113
+peru,la libertad,chepen,1011879,24119
+peru,huanuco,puerto inca,1011880,24101
+peru,ica,chincha,1011881,24103
+peru,puno,sandia,1011886,24176
+peru,ica,pisco,1011887,24107
+peru,lima,huaura,1011893,24138
+peru,cajamarca,santa cruz,1011894,24138
+peru,loreto,maynas,1011897,24145
+peru,loreto,putumayo,1011897,2343
+peru,ayacucho,huanta,1011898,24051
+peru,la libertad,gran chimu,1011900,24120
+peru,loreto,loreto,1011903,24143
+peru,tumbes,tumbes,1011904,24194
+peru,junin,chanchamayo,1011905,24108
+peru,lima,huaral,1011906,24136
+peru,huanuco,maraѐon,1011910,
+peru,tumbes,contralmirante villar,1011914,24193
+peru,piura,talara,1011917,24164
+peru,tumbes,zarumilla,1011918,24195
+peru,ayacucho,sucre,1011921,24056
+peru,arequipa,caraveli,1011922,24041
+peru,cajamarca,celendin,1011925,24060
+peru,cusco,paucartambo,1011931,24082
+peru,amazonas,chachapoyas,1011933,24007
+peru,madre de dios,tahuamanu,1011935,24149
+peru,san martin,moyobamba,1011936,24184
+peru,cajamarca,cajabamba,1011938,24058
+peru,amazonas,rodriguez de mendoza,1011942,24010
+peru,loreto,ucayali,1011944,24147
+peru,la libertad,pacasmayo,1011945,24123
+peru,puno,carabaya,1011948,24166
+peru,amazonas,bongara,1011952,24006
+peru,huanuco,huamalies,1011957,24095
+peru,ayacucho,la mar,1011958,24052
+peru,la libertad,bolivar,1011959,24118
+peru,ucayali,purus,1011964,24147
+peru,lima,barranca,1011969,24132
+peru,lambayeque,ferrenafe,1011970,24130
+peru,madre de dios,tambopata,1011974,24150
+peru,san martin,el dorado,1011977,91844
+peru,piura,morropon,1011980,24159
+peru,junin,satipo,1011981,24114
+peru,san martin,san martin,1011982,24187
+peru,san martin,rioja,1011984,24186
+peru,piura,sullana,1011985,24163
+peru,la libertad,trujillo,1011988,24127
+peru,cajamarca,cutervo,1011991,24063
+peru,loreto,alto amazonas,1011992,91847
+peru,loreto,datem del maranon,1011992,91842
+peru,lambayeque,lambayeque,1011996,24131
+peru,cajamarca,san miguel,1011997,24068
+peru,san martin,picota,1011999,24185
+peru,ica,nazca,1012003,24105
+peru,ancash,casma,1012005,24018
+peru,ayacucho,paucar del sara sara,1012006,24055
+peru,la libertad,ascope,1012008,24117
+peru,ucayali,coronel portillo,1012012,24197
+peru,loreto,mariscal ramon castilla,1012013,24144
+peru,moquegua,mariscal nieto,1012015,24153
+peru,piura,ayabaca,1012017,24157
+peru,ancash,huarmey,1012018,91836
+peru,huanuco,ambo,1012022,24092
+peru,ancash,pallasca,1012023,24026
+peru,piura,paita,1012025,24160
+peru,lambayeque,chiclayo,1012027,24129
+peru,amazonas,condorcanqui,1012029,24008
+peru,huanuco,huanuco,1012030,24096
+peru,la libertad,pataz,1012031,24124
+peru,ayacucho,lucanas,1012032,24053
+peru,cajamarca,hualgayoc,1012033,24064
+peru,san martin,bellavista,1012034,24179
+peru,loreto,requena,1012038,24146
+peru,ucayali,atalaya,1012040,24196
+peru,amazonas,utcubamba,1012041,24011
+peru,lima,huarochiri,1012045,24137
+peru,san martin,mariscal caceres,1012047,91846
+peru,ancash,santa,1012051,24029
+peru,cajamarca,san ignacio,1012052,24066
+peru,cajamarca,contumaza,1012053,24062
+peru,amazonas,bagua,1012057,24005
+peru,huanuco,pachitea,1012058,24100
+myanmar,shan (north),NA,1012300,41775
+myanmar,shan (n),NA,1012300,41775
+viet nam,da nang city,NA,1012301,3340
+viet nam,ho chi minh city,NA,1012302,3352
+viet nam,tuyen quang,NA,1012305,3387
+myanmar,tanintharyi,NA,1012308,2135
+viet nam,bac giang,NA,1012309,3329
+viet nam,nghe an,NA,1012311,3366
+viet nam,bac lieu,NA,1012314,3330
+viet nam,an giang,NA,1012315,3326
+viet nam,dien bien,NA,1012316,73936
+viet nam,can tho city,NA,1012318,73933
+myanmar,mon,NA,1012319,2132
+myanmar,mongar,NA,1012319,
+myanmar,kachin,NA,1012320,2127
+viet nam,thai nguyen,NA,1012322,3381
+viet nam,vinh phuc,NA,1012324,3389
+viet nam,tay ninh,NA,1012325,3379
+viet nam,thai binh,NA,1012326,3380
+viet nam,nam dinh,NA,1012329,3364
+myanmar,yangon,NA,1012330,2136
+viet nam,lam dong,NA,1012334,3359
+viet nam,kon tum,NA,1012341,3357
+viet nam,ninh thuan,NA,1012342,3368
+viet nam,quang tri,NA,1012343,3376
+viet nam,dak lak,NA,1012345,73934
+viet nam,soc trang,NA,1012346,3377
+viet nam,vinh long,NA,1012348,3388
+myanmar,rakhine,NA,1012349,2123
+myanmar,bago (west),NA,1012350,41773
+myanmar,bago (w,NA,1012350,41773
+viet nam,tra vinh,NA,1012355,3386
+viet nam,binh thuan,NA,1012357,3336
+viet nam,lang son,NA,1012358,3360
+viet nam,lai chau,NA,1012359,73938
+myanmar,shan (south),NA,1012363,41776
+myanmar,shan (s),NA,1012363,41776
+viet nam,binh duong,NA,1012365,3334
+viet nam,lao cai,NA,1012366,73939
+viet nam,hau giang,NA,1012367,73937
+viet nam,ba ria-vung tau,NA,1012369,3327
+viet nam,ha tay,NA,1012370,3348
+viet nam,cao bang,NA,1012375,3338
+viet nam,khanh hoa,NA,1012376,3355
+viet nam,bac kan,NA,1012378,3330
+myanmar,kayah,NA,1012380,2129
+viet nam,dong thap,NA,1012385,3343
+viet nam,ben tre,NA,1012388,3332
+viet nam,ca mau,NA,1012389,3339
+viet nam,hai phong city,NA,1012393,3351
+viet nam,thanh hoa,NA,1012394,3382
+viet nam,long an,NA,1012395,3362
+viet nam,quang nam,NA,1012397,3372
+viet nam,binh dinh,NA,1012400,3333
+viet nam,ha noi city,NA,1012401,3347
+viet nam,kien giang,NA,1012402,3356
+viet nam,hai duong,NA,1012405,3350
+viet nam,ha tinh,NA,1012406,3349
+viet nam,tien giang,NA,1012408,3384
+viet nam,thua thien - hue,NA,1012409,3383
+viet nam,dong nai,NA,1012412,3342
+myanmar,kayin,NA,1012414,2128
+viet nam,quang ngai,NA,1012415,3374
+myanmar,magway,NA,1012416,2130
+viet nam,quang ninh,NA,1012418,3375
+viet nam,gia lai,NA,1012419,3344
+viet nam,ninh binh,NA,1012422,3367
+viet nam,bac ninh,NA,1012424,3331
+viet nam,ha nam,NA,1012425,3346
+viet nam,binh phuoc,NA,1012427,3335
+viet nam,dak nong,NA,1012428,73935
+myanmar,chin,NA,1012430,2125
+myanmar,sagaing,NA,1012431,2133
+myanmar,mandalay,NA,1012432,2131
+myanmar,nay pyi taw,NA,1012432,
+myanmar,naypyitaw,NA,1012432,
+viet nam,son la,NA,1012434,3378
+viet nam,phu tho,NA,1012435,3369
+viet nam,yen bai,NA,1012437,3390
+myanmar,shan (east),NA,1012438,41774
+myanmar,ayeyarwady,NA,1012439,2126
+myanmar,ayayarwaddy,NA,1012439,2126
+viet nam,quang binh,NA,1012441,3371
+viet nam,hoa binh,NA,1012447,3353
+viet nam,phu yen,NA,1012452,3370
+viet nam,ha giang,NA,1012453,3345
+myanmar,bago (east),NA,1012454,41772
+myanmar,bago (e),NA,1012454,41772
+viet nam,hung yen,NA,1012459,3354
+indonesia,jawa timur,NA,1013663,1521
+indonesia,papua barat,NA,1013664,73612
+indonesia,papua barat daya,NA,1013664,73612
+indonesia,papua selatan,NA,1013664,
+indonesia,kepulauan riau,NA,1013665,73614
+indonesia,kepulauan-riau,NA,1013665,73614
+indonesia,sulawesi utara,NA,1013666,73621
+indonesia,kalimantan tengah,NA,1013667,1524
+indonesia,sulawesi tenggara,NA,1013668,1533
+indonesia,di yogyakarta,NA,1013669,1515
+indonesia,daerah istimewa yogyakarta,NA,1013669,1515
+indonesia,d.i yogya,NA,1013669,1515
+indonesia,riau,NA,1013670,73618
+indonesia,nanggroe aceh darussalam,NA,1013671,1512
+indonesia,nangroe aceh darussalam,NA,1013671,1512
+indonesia,aceh,NA,1013671,1512
+indonesia,jambi,NA,1013672,1518
+indonesia,lampung,NA,1013673,1526
+indonesia,gorontalo,NA,1013674,73611
+indonesia,kepulauan bangka belitung,NA,1013675,73609
+indonesia,bangka belitung,NA,1013675,73609
+indonesia,babel,NA,1013675,73609
+indonesia,dki jakarta,NA,1013676,1516
+indonesia,maluku utara,NA,1013677,73616
+indonesia,bali,NA,1013678,1513
+indonesia,maluku,NA,1013679,73615
+indonesia,jawa barat,NA,1013680,73613
+indonesia,sumatera utara,NA,1013681,1537
+indonesia,sumatera barat,NA,1013682,1535
+indonesia,nusa tenggara timur,NA,1013683,1529
+indonesia,nusatenggara timur,NA,1013683,1529
+indonesia,bengkulu,NA,1013684,1514
+indonesia,kalimantan selatan,NA,1013685,1523
+indonesia,kalimantan selata,NA,1013685,1523
+indonesia,jawa tengah,NA,1013686,1520
+indonesia,kalimantan timur,NA,1013687,1525
+indonesia,kalimantan utara,NA,1013687,
+indonesia,banten,NA,1013688,73610
+indonesia,sulawesi selatan,NA,1013689,73620
+indonesia,sulawesi selata,NA,1013689,73620
+indonesia,sulawesi tengah,NA,1013690,1532
+indonesia,nusa tenggara barat,NA,1013691,1528
+indonesia,nusatenggara barat,NA,1013691,1528
+indonesia,sulawesi barat,NA,1013692,73619
+indonesia,sumatera selatan,NA,1013693,73622
+indonesia,sumatera selata,NA,1013693,73622
+indonesia,papua,NA,1013694,73617
+indonesia,papua pegunungan,NA,1013694,
+indonesia,papua tengah,NA,1013694,
+indonesia,kalimantan barat,NA,1013695,1522
+indonesia,NA,NA,1013696,116
