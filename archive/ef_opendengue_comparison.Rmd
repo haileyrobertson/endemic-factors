@@ -1,0 +1,87 @@
+```{r}
+library(tidyverse)
+library(countrycode)
+library(lubridate)
+```
+```{r}
+s_df <- read.csv('./data/Spatial_extract_V1_3/Spatial_extract_V1_3.csv', stringsAsFactors = FALSE)
+m_df <- read.csv('./archive/data/masterDB_V1.3.csv', stringsAsFactors = FALSE, fileEncoding = "latin1")
+n_df <- read.csv('./archive/data/National_extract_V1_3.csv', stringsAsFactors = FALSE)
+```
+```{r}
+nrow(s_df)
+nrow(m_df)
+ncol(s_df)
+ncol(m_df)
+```
+```{r}
+s_df_iso3 <- unique(s_df$ISO_A0)
+length(s_df_iso3)
+
+name_dict <- c(
+    "FSM" = "FSM",
+    "SAINT MARTIN" = "MAF",
+    "KOSOVO" = "XKX",
+    "SOMALILAND" = "SOM"
+  )
+
+m_df <- m_df %>%
+    mutate(
+      adm_0_iso3 = countrycode(adm_0_name,
+        origin = "country.name",
+        destination = "iso3c",
+        custom_match = name_dict,
+        origin_regex = TRUE,
+        warn = TRUE
+      ))
+
+m_df_iso3 <- unique(m_df$adm_0_iso3)
+length(m_df_iso3)
+
+setdiff(s_df_iso3, m_df_iso3)
+setdiff(m_df_iso3, s_df_iso3)
+```
+```{r}
+s_df_adm1 <- s_df %>% group_by(ISO_A0, adm_1_name) %>% rename(adm_0_iso3 = ISO_A0) %>% summarise() %>% ungroup()
+m_df_adm1 <- m_df %>% group_by(adm_0_iso3, adm_1_name) %>% summarise() %>% ungroup()
+
+length(s_df_adm1$adm_1_name)
+length(m_df_adm1$adm_1_name)
+
+setdiff(s_df_adm1$adm_1_name, m_df_adm1$adm_1_name)
+setdiff(m_df_adm1$adm_1_name, s_df_adm1$adm_1_name)
+```
+```{r}
+s_y <- s_df %>% distinct(Year) %>% arrange(Year) 
+m_y <- m_df %>% mutate(Year = year(calendar_start_date)) %>% distinct(Year) %>% arrange(Year)
+
+setdiff(s_y, m_y)
+setdiff(m_y, s_y)
+```
+```{r}
+s_temp <- s_df %>% mutate(across(all_of(c("calendar_start_date", "calendar_end_date")), ymd),
+      Year = year(calendar_start_date),
+      period_length = calendar_end_date - calendar_start_date + 1
+)
+m_temp <- m_df %>% mutate(across(all_of(c("calendar_start_date", "calendar_end_date")), ymd),
+      Year = year(calendar_start_date),
+      period_length = calendar_end_date - calendar_start_date + 1
+)
+
+unique(m_temp$period_length)
+unique(s_temp$period_length)
+```
+```{r}
+s_check1 <- s_df %>% dplyr::filter(!S_res == "Admin0") %>% 
+          group_by(ISO_A0, Year) %>% summarise(sum(dengue_total))
+
+s_check0 <- s_df %>% dplyr::filter(S_res == "Admin0") %>% 
+          group_by(ISO_A0, Year) %>% summarise(sum(dengue_total))
+
+n_check <- n_df %>%
+          group_by(ISO_A0, Year) %>% summarise(sum(dengue_total))
+
+s_comp <- full_join(s_check1, s_check0, by = c("ISO_A0", "Year"), suffix = c("_adm1", "_adm0"))
+
+sn_comp <- full_join(s_comp, n_check, by = c("ISO_A0", "Year"), suffix = c("", "_national"))
+```
