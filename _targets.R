@@ -32,6 +32,11 @@ input_targets <- tar_plan(
     adm1,
     load_adm()$adm1,
     format = "rds"
+  ),
+  tar_target(
+    raw_pop,
+    load_pop(data_dir),
+    format = "rds"
   )
 )
 
