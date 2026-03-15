@@ -1,4 +1,22 @@
-# import df_raw
+df_raw <- raw_dengue
+names(df_raw) <- tolower(names(df_raw))
+
+normalize <- function(x) {
+  stringi::stri_trans_general(x, "latin-ascii") |>
+    tolower() |>
+    trimws()
+}
+
+df_raw <- df_raw |>
+  mutate(
+    adm_0_name = normalize(adm_0_name),
+    adm_1_name = normalize(adm_1_name),
+    adm_2_name = normalize(adm_2_name),
+    full_name = normalize(full_name),
+    case_definition_standardised = normalize(case_definition_standardised),
+    s_res = normalize(s_res),
+    t_res = normalize(t_res)
+  )
 
 df_fix <- df_raw |>
   mutate(
