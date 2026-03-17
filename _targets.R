@@ -24,13 +24,14 @@ input_targets <- tar_plan(
     format = "rds"
   ),
   tar_target(
-    adm0,
-    load_adm()$adm0,
+    gaul_recode,
+    readr::read_csv("data/fao_gaul/gaul_recode.csv"),
     format = "rds"
   ),
+  # TODO: set a CRS (currently NA!)
   tar_target(
-    adm1,
-    load_adm()$adm1,
+    shp,
+    sf::st_read("data/fao_gaul/g2015_2014_2/g2015_2014_2.shp"),
     format = "rds"
   ),
   tar_target(
@@ -45,13 +46,32 @@ input_targets <- tar_plan(
 #-------------------------------------------------------------------
 processing_targets <- tar_plan(
   tar_target(
-    cleaned_dengue,
-    clean_dengue(raw_dengue, adm0, adm1),
+    df_fix,
+    match_places(raw_dengue, gaul_recode, shp),
     format = "rds"
   ),
   tar_target(
-    americas_df,
-    cleaned_dengue %>% dplyr::filter(region_un == "Americas"),
+    locations,
+    data.frame(
+      iso_a0 = c("VNM", "COL", "MEX", "BRA"),
+      location = c("ha noi city", "cali", "distrito federal", "rio de janeiro"),
+      level = c("adm1", "adm2", "adm1", "adm2")
+    )
+  ),
+  tar_target(
+    subset,
+    extract_ts(df_fix, locations),
+    format = "rds"
+  ),
+  tar_target(
+    breakdown,
+    subset |>
+      dplyr::count(iso_a0, year, gaul_level, t_res) |>
+      tidyr::pivot_wider(
+        names_from = c(gaul_level, t_res),
+        values_from = n,
+        values_fill = 0
+      ),
     format = "rds"
   )
 )
@@ -66,11 +86,11 @@ analysis_targets <- tar_plan()
 #-------------------------------------------------------------------
 
 outputs_targets <- tar_plan(
-  tar_target(
-    dengue_coverage_plot,
-    plot_dengue_coverage(cleaned_dengue, adm0, adm1, output_dir),
-    format = "file"
-  )
+  # tar_target(
+  #   dengue_coverage_plot,
+  #   plot_dengue_coverage(cleaned_dengue, adm0, adm1, output_dir),
+  #   format = "file"
+  # )
 )
 
 #-------------------------------------------------------------------

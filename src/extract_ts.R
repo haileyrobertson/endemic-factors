@@ -1,12 +1,8 @@
-locations <- data.frame(
-  iso_a0 = c("VNM", "COL", "MEX", "BRA"),
-  location = c("ha noi city", "cali", "distrito federal", "rio de janeiro"),
-  level = c("adm1", "adm2", "adm1", "adm2")
-)
-
 extract_ts <- function(data, locations) {
   df <- data %>%
     # join by country as first op
+    # NOTE: This might break if multiple locations share a country
+    # Maybe do semi_join? look into
     dplyr::inner_join(locations, by = "iso_a0") %>%
     # then match by admin level
     dplyr::filter(
@@ -41,15 +37,3 @@ extract_ts <- function(data, locations) {
 
   return(df)
 }
-
-subset <- extract_ts(df_fix, locations)
-
-subbreakdown <- subset |>
-  count(iso_a0, year, gaul_level, t_res) |>
-  tidyr::pivot_wider(
-    names_from = c(gaul_level, t_res),
-    values_from = n,
-    values_fill = 0
-  )
-
-#####
