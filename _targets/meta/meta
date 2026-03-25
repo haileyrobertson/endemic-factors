@@ -8,18 +8,18 @@ load_adm|function|7c47ab2d15eaa180
 clean_dengue|function|98a16beb8289b0c1
 cleaned_dengue|stem|e2fb6d3edeae00ed|a5809328dec4baa9|900c8c68083754fe|-1108930163||t20441.7233173186s|s26155319496b|26155319496|rds|local|vector|||4291.035||
 dengue_coverage_plot|stem|2896b29ac99ba104|d99a6970094bf42f|be06c8061dcb16dc|-890484156|/Users/haileyrobertson/Documents/GitHub/endemic-factors/outputs/figures/adm1_opendengue_coverage_americas.png*/Users/haileyrobertson/Documents/GitHub/endemic-factors/outputs/figures/adm1_opendengue_coverage_global.png|t20441.6471770326s||1275966|file|local|vector|||0.032||object 'cleaned_dengue' not found
-data_dir|object|184dc62ab72450e2
-extract_ts|function|3478c366b2a4aa07
-match_places|function|ff3bb9e3ec539d0d
-.Random.seed|object|dc389916c669236b
-load_pop|function|42b652212827cb51
-f|object|07f2ad20db168036
-plot_dengue_coverage|function|a87099131931e5af
-load_dengue|function|0cb2f399fa0f5426
-output_dir|object|9cdce0d5b13ebdd4
 locations|stem|09fc79168ccc6158|26106da9485b3952|2c530c1562a7fbd1|-1491150814||t20529.7552608836s|s224b|224|rds|local|vector|||0.001||
 shp|stem|c79e0bb8f201d941|aa7f4fb530c89be1|2c530c1562a7fbd1|370749803||t20529.7558961739s|s472021328b|472021328|rds|local|vector|||6.362||
 gaul_recode|stem|702029713f06d07b|59d10a1b72ee7e7c|2c530c1562a7fbd1|-1306036721||t20529.7559044822s|s4750b|4750|rds|local|vector|||0.236||
 df_fix|stem|d1b083a75ad32577|37e7438e4fa29acc|944991c34de7f61c|333115049||t20529.7568769587s|s42777431b|42777431|rds|local|vector|||62.517||
 subset|stem|cf189ef8748eef12|4418fd3a19b3229e|697f0d42673754cf|-882240089||t20529.7569604827s|s13495b|13495|rds|local|vector|||1.178||
 breakdown|stem|cfec092017c5f6a1|27b6d8459e3e3256|a2bbb18648d68c1b|-198851376||t20529.7569607778s|s368b|368|rds|local|vector|||0.011||
+data_dir|object|184dc62ab72450e2
+extract_ts|function|3478c366b2a4aa07
+match_places|function|ff3bb9e3ec539d0d
+.Random.seed|object|c23be828e04ade65
+load_pop|function|42b652212827cb51
+f|object|07f2ad20db168036
+plot_dengue_coverage|function|a87099131931e5af
+load_dengue|function|0cb2f399fa0f5426
+output_dir|object|9cdce0d5b13ebdd4
